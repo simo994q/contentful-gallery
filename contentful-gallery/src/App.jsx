@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import style from './App.module.scss'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer' // skal kun bruges til rich text formater
 import * as contentful from 'contentful'
 
@@ -15,13 +16,15 @@ function App() {
 
   useEffect(() => {
     client.getEntries()
-    .then((entry) => setData(entry))
+    .then((entry) => {setData(entry), console.log(entry)})
     .catch(console.error)
   }, [])
 
   return (
     <>
-
+      <div className={style.header}>
+        <img src={`https:${data?.items[1].fields.header.fields.file.url}`} alt="" />
+      </div>
     </>
   )
 }
