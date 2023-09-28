@@ -28,8 +28,8 @@ function App() {
 
       <div className={style.description}>
         <article>
-          <h2>{data?.items[1].fields.descriptionTitle}</h2>
-          <p>{data?.items[1].fields.description}</p>
+          <h2>{data?.items[0].fields.descriptionTitle}</h2>
+          <p>{data?.items[0].fields.description}</p>
         </article>
       </div>
 
@@ -45,7 +45,7 @@ function App() {
       </div>
 
       <footer className={style.footer}>
-        <p>{data?.items[0].fields.owner}</p>
+        <p>{data?.items[1].fields.owner}</p>
       </footer>
 
     </>
