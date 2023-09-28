@@ -26,7 +26,12 @@ function App() {
         <img src={`https:${data?.items[2].fields.header.fields.file.url}`} alt="" />
       </div>
 
-
+      <div className={style.description}>
+        <article>
+          <h2>{data?.items[0].fields.descriptionTitle}</h2>
+          <p>{data?.items[0].fields.description}</p>
+        </article>
+      </div>
 
       <div className={style.gallery}>
         {data?.items[3].fields.images.map((item, index) => {
@@ -38,6 +43,10 @@ function App() {
           )
         })}
       </div>
+
+      <footer className={style.footer}>
+        <p>{data?.items[1].fields.owner}</p>
+      </footer>
 
     </>
   )
