@@ -26,6 +26,8 @@ function App() {
         <img src={`https:${data?.items[2].fields.header.fields.file.url}`} alt="" />
       </div>
 
+
+
       <div className={style.gallery}>
         {data?.items[3].fields.images.map((item, index) => {
           return (
