@@ -27,10 +27,13 @@ function App() {
       </div>
 
       <div className={style.description}>
-        <article>
-          <h2>{data?.items[0].fields.descriptionTitle}</h2>
-          <p>{data?.items[0].fields.description}</p>
-        </article>
+        <div>
+          <article>
+            <h2>{data?.items[0].fields.descriptionTitle}</h2>
+            <p>{data?.items[0].fields.description}</p>
+          </article>
+        </div>
+        
       </div>
 
       <div className={style.gallery}>
