@@ -4,4 +4,20 @@
     img {
         height: 200px;
     }
+    margin-bottom: 50px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+
+    div {
+        width: 250px;
+
+        img {
+            width: 100%;
+        }
+    }
 }

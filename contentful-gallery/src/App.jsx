@@ -23,8 +23,20 @@ function App() {
   return (
     <>
       <div className={style.header}>
-        <img src={`https:${data?.items[1].fields.header.fields.file.url}`} alt="" />
+        <img src={`https:${data?.items[2].fields.header.fields.file.url}`} alt="" />
       </div>
+
+      <div className={style.gallery}>
+        {data?.items[3].fields.images.map((item, index) => {
+          return (
+            <div key={index}>
+              <img src={`https:${item.fields.file.url}`} alt="" />
+              <p>{item.fields.description}</p>
+            </div>
+          )
+        })}
+      </div>
+
     </>
   )
 }
