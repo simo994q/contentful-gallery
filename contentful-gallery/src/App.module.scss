@@ -28,7 +28,7 @@
         max-width: 900px;
         margin: 0 auto;
         text-align: left;
-        animation: fadeIn ease-out 2s;
+        animation: fadeIn ease-out 3s;
     }
 }
 
@@ -53,9 +53,9 @@
     width: 100%;
     margin: 0 auto;
     padding: 10px 0px;
-
+    
     p {
-        animation: fadeIn ease-out 2s;
+        animation: fadeInLeft ease-out 2s;
     }
 }
 
@@ -94,4 +94,19 @@
     100% {
       opacity:1;
     }
-  }
+}
+
+@keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+}
+
