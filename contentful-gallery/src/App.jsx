@@ -30,13 +30,10 @@ function App() {
       </div>
 
       <div className={style.description}>
-        <div>
           <article>
             <h2>{data ? data.items[0].fields.descriptionTitle : 'Loading...'}</h2>
             <p>{data ? data.items[0].fields.description : 'Loading...'}</p>
           </article>
-        </div>
-
       </div>
 
       <div className={style.gallery}>
