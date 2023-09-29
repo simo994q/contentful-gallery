@@ -1,8 +1,6 @@
 .header {
     width: 100%;
     background-color: gray;
-    // display: flex;
-    // justify-content: center;
     margin-bottom: 50px;
     
     img {
@@ -34,7 +32,7 @@
     justify-content: space-evenly;
     margin-bottom: 40px;
 
-    div {
+    .imageDescription {
         width: 250px;
 
         img {
@@ -49,3 +47,14 @@
     margin: 0 auto;
     padding: 10px 0px;
 }
+
+.loading {
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

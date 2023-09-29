@@ -8,6 +8,8 @@ function App() {
 
   const [data, setData] = useState()
 
+  const randomArray = [1, 2, 3, 4]
+
   const client = contentful.createClient({
     space: `${import.meta.env.VITE_PUBLIC_SPACE_ID}`,
     environment: 'master',
@@ -16,8 +18,8 @@ function App() {
 
   useEffect(() => {
     client.getEntries()
-    .then((entry) => {setData(entry), console.log(entry)})
-    .catch(console.error)
+      .then((entry) => { setData(entry), console.log(entry) })
+      .catch(console.error)
   }, [])
 
   return (
@@ -33,18 +35,34 @@ function App() {
             <p>{data?.items[0].fields.description}</p>
           </article>
         </div>
-        
+
       </div>
 
       <div className={style.gallery}>
-        {data?.items[3].fields.images.map((item, index) => {
+        {/* {data?.items[3].fields.images.map((item, index) => {
+            return (
+              <div key={index}>
+                <img src={`https:${item.fields.file.url}`} alt="" />
+                <p>{item.fields.description}</p>
+              </div>
+            )
+          })} */}
+        {data ? data.items[3].fields.images.map((item, index) => {
           return (
             <div key={index}>
               <img src={`https:${item.fields.file.url}`} alt="" />
               <p>{item.fields.description}</p>
             </div>
           )
-        })}
+        }) : randomArray.map((item, index) => {
+          return (
+            <div key={index}>
+              <img src='/spinner.png' alt="" className={style.loading} />
+              <p>Loading...</p>
+            </div>
+          )
+        })
+        }
       </div>
 
       <footer className={style.footer}>
