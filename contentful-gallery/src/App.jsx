@@ -25,28 +25,21 @@ function App() {
   return (
     <>
       <div className={style.header}>
-        <img src={`https:${data?.items[2].fields.header.fields.file.url}`} alt="" />
+        {data ? <img src={`https:${data?.items[2].fields.header.fields.file.url}`} alt="" /> : <p>Loading...</p>}
+        {/* <img src={`https:${data?.items[2].fields.header.fields.file.url}`} alt="" /> */}
       </div>
 
       <div className={style.description}>
         <div>
           <article>
-            <h2>{data?.items[0].fields.descriptionTitle}</h2>
-            <p>{data?.items[0].fields.description}</p>
+            <h2>{data ? data.items[0].fields.descriptionTitle : 'Loading...'}</h2>
+            <p>{data ? data.items[0].fields.description : 'Loading...'}</p>
           </article>
         </div>
 
       </div>
 
       <div className={style.gallery}>
-        {/* {data?.items[3].fields.images.map((item, index) => {
-            return (
-              <div key={index}>
-                <img src={`https:${item.fields.file.url}`} alt="" />
-                <p>{item.fields.description}</p>
-              </div>
-            )
-          })} */}
         {data ? data.items[3].fields.images.map((item, index) => {
           return (
             <div key={index}>
@@ -66,7 +59,7 @@ function App() {
       </div>
 
       <footer className={style.footer}>
-        <p>{data?.items[1].fields.owner}</p>
+        <p>{data ? data.items[1].fields.owner : 'Loading...'}</p>
       </footer>
 
     </>
