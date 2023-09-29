@@ -26,7 +26,6 @@ function App() {
     <>
       <div className={style.header}>
         {data ? <img src={`https:${data?.items[2].fields.header.fields.file.url}`} alt="" /> : <p>Loading...</p>}
-        {/* <img src={`https:${data?.items[2].fields.header.fields.file.url}`} alt="" /> */}
       </div>
 
       <div className={style.description}>
