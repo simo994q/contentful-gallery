@@ -12,7 +12,6 @@
         display: block;
         animation: drop 2s linear 1 forwards;
         animation-timing-function: ease-out;
-        transform: translateY(-50%);
         top: 100%;
         position: absolute;
     }
@@ -73,10 +72,12 @@
 
 @keyframes drop {
     0% {
-        top: 100%;
+        top: 0%;
+        transform: translateY(0%);
     }
     
     100% {
         top: 50%;
+        transform: translateY(-50%);
     }
 }
