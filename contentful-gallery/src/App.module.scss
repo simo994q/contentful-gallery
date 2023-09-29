@@ -1,5 +1,5 @@
 .header {
-    width: 100vw;
+    width: 100%;
     background-color: gray;
     // display: flex;
     // justify-content: center;
@@ -16,7 +16,7 @@
 
 .description {
     width: 100%;
-    padding: 20px;
+    padding: 20px 0px;
     margin-bottom: 20px;
 
     article {
