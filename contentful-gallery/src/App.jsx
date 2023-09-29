@@ -3,6 +3,7 @@ import './App.css'
 import style from './App.module.scss'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer' // skal kun bruges til rich text formater
 import * as contentful from 'contentful'
+import { motion } from "framer-motion"
 
 function App() {
 
@@ -42,7 +43,11 @@ function App() {
         {data ? data.items[3].fields.images.map((item, index) => {
           return (
             <div key={index}>
-              <img src={`https:${item.fields.file.url}`} alt="" />
+              <motion.img src={`https:${item.fields.file.url}`} alt=""
+                  initial={{ opacity: 0, scale: 0.5, y: -100 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index*0.1 }}       
+              />
               <p>{item.fields.description}</p>
             </div>
           )
